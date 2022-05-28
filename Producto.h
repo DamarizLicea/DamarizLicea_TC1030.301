@@ -7,8 +7,6 @@
 
 using namespace std;
 
-//27/0/22 El código todavia no esta terminado, hay dudas de implementacion de algunas cosas, pero te deje notas de según yo donde estqa lo que vas a evaluar, amigo becario.
-
 //clase Producto
 class Producto
 {
@@ -27,6 +25,7 @@ protected:
 
 
 public:
+    Producto (string ti, string sab, string fec);
     Producto (int porc, string ti, string sab, string cre, string rell,
 	      string deco);
     Producto (int porc, string ti, string sab, string cre, string rell, string deco, string fec, float pres);	//Sobrecarga
@@ -35,6 +34,12 @@ public:
     void agrega_pedido();
 
 };
+    Producto::Producto (string ti, string sab, string fec)
+  {
+    tipo = ti;
+    sabor = sab;
+    fecha = fec;
+  }
     Producto::Producto (int porc, string ti, string sab, string cre,
 			string rell, string deco)
   {
@@ -91,9 +96,9 @@ public:
   }
 
 
-//Metodos de acceso 
 
-class Pastel:public Producto  {
+class Pastel:public Producto
+{
 
 private:
   float preciofinal;
@@ -102,12 +107,12 @@ public:
 
     Pastel (float prefin):Producto ( porc, ti, sab, cre, rell, deco)
   {
-    preciofinal = prefin;
+    preciofinal = 0.0;
   }
   
    Pastel (float prefin):Producto (porc, ti, sab, cre, rell, deco, fec, pres)
   {
-    preciofinal = prefin;
+    preciofinal = 0.0;
   }
 
    float cobrar(float preciofinal){return 0.0;}
@@ -124,3 +129,34 @@ public:
 	cout << "Decoracion: "<< decoracion << endl;
 } 
 //revisar implementacion, pero quería hacer ejemplo de sobreescritura
+
+
+class Galleta:public Empleado{
+    private:
+    int bolsas
+    
+
+public:
+    Galleta (int bol):Producto (string ti, string sab, string fec)
+  {
+     bolsas= 0 ;
+  }
+
+
+   float cobrar(float preciofinal){return 0.0;}
+    void imprime_orden();
+    void agrega_pedido();
+  };
+void Galleta::imprime_orden(){
+	cout << "Bolsas: "<< bolsas << endl;
+	cout << "Tipo: "<< tipo << endl;
+	cout << "Sabor: "<< sabor << endl;
+	cout << "Fecha: "<< fecha << endl;
+} 
+
+// Faltaria poner tarta, pero es casi igual a pastel y quisiera corregir los errores de esto primero :)))
+
+
+
+#endif // PRODUCTO_H_
+
