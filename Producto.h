@@ -32,6 +32,15 @@ public:
     float cobrar(float preciofinal){return 0.0;}
     void imprime_orden();
     void agrega_pedido();
+	
+    int get_porciones();
+    string get_tipo();
+    string get_sabor();
+    string get_crema();
+    string get_relleno();
+    string get_decoracion();
+    string get_fecha();
+    float get_precio();
 
 };
     Producto::Producto (string ti, string sab, string fec)
@@ -59,38 +68,39 @@ public:
     crema = cre;
     relleno = rell;
     decoracion = deco;
-    fecha = fec precio = 0.0
+    fecha = fec;
+	precio = 0.0;
       
   }
 
 
-  int get_porciones ()
+  int Producto::get_porciones ()
   {
     return porciones;
   }
-  string get_sabor ()
+  string Producto::get_sabor ()
   {
     return sabor;
   }
-  string get_crema ()
+  string Producto::get_crema ()
   {
     return crema;
   }
 
-  string get_relleno ()
+  string Producto::get_relleno ()
   {
     return relleno;
   }
 
-  string get_decoracion ()
+  string Producto::get_decoracion ()
   {
     return decoracion;
   }
-  string get_fecha ()
+  string Producto::get_fecha ()
   {
     return fecha;
   }
-  float get_precio ()
+  float Producto::get_precio ()
   {
     return precio;
   }
@@ -154,9 +164,39 @@ void Galleta::imprime_orden(){
 	cout << "Fecha: "<< fecha << endl;
 } 
 
+class Tarta:public Producto
+{
+
+private:
+  float preciofinal;
+
+public:
+
+    Tarta(float prefin):Producto ( porc, ti, sab, cre, rell, deco)
+  {
+    preciofinal = 0.0;
+  }
+  
+   Tarta (float prefin):Producto (porc, ti, sab, cre, rell, deco, fec, pres)
+  {
+    preciofinal = 0.0;
+  }
+
+   float cobrar(float preciofinal){return 0.0;}
+    void imprime_orden();
+    void agrega_pedido();
+  };
+
+  void Pastel::imprime_orden(){
+	cout << "Porciones: "<< porciones << endl;
+	cout << "Tipo: "<< tipo << endl;
+	cout << "Sabor: "<< sabor << endl;
+	cout << "Crema: "<< crema << endl;
+	cout << "Relleno: "<< relleno << endl;
+	cout << "Decoracion: "<< decoracion << endl;
+}
 // Faltaria poner tarta, pero es casi igual a pastel y quisiera corregir los errores de esto primero :)))
 
 
 
 #endif // PRODUCTO_H_
-
