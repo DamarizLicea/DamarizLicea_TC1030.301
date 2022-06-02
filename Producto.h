@@ -4,6 +4,7 @@
 #include <string>
 
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -17,18 +18,14 @@ protected:
   int porciones;
   string tipo;
   string sabor;
-  string crema;
-  string relleno;
-  string decoracion;
   string fecha;
   float precio;
 
 
 public:
-    Producto (string ti, string sab, string fec);
-    Producto (int porc, string ti, string sab, string cre, string rell,
-	      string deco);
-    Producto (int porc, string ti, string sab, string cre, string rell, string deco, string fec, float pres);	//Sobrecarga
+    Producto (): porciones(0), tipo (""), sabor(""),fecha(""), precio(0.0){} ;
+    
+    Producto (int porc, string ti, string sab, string fec, double pres): porciones(porc),tipo(ti), sabor(sab),fecha(fec), precio(pres) {};
     float cobrar(float preciofinal){return 0.0;}
     void imprime_orden();
     void agrega_pedido();
@@ -36,66 +33,25 @@ public:
     int get_porciones();
     string get_tipo();
     string get_sabor();
-    string get_crema();
-    string get_relleno();
-    string get_decoracion();
     string get_fecha();
     float get_precio();
 
 };
-    Producto::Producto (string ti, string sab, string fec)
-  {
-    tipo = ti;
-    sabor = sab;
-    fecha = fec;
-  }
-    Producto::Producto (int porc, string ti, string sab, string cre,
-			string rell, string deco)
-  {
-    porciones = 0;
-    tipo = ti;
-    sabor = sab;
-    crema = cre;
-    relleno = rell;
-    decoracion = deco;
-  }
-    Producto::Producto (int porc, string ti, string sab, string cre,
-		      string rell, string deco, string fec, float pres)
-  {
-    porciones = 0;
-    tipo = ti;
-    sabor = sab;
-    crema = cre;
-    relleno = rell;
-    decoracion = deco;
-    fecha = fec;
-	precio = 0.0;
-      
-  }
-
+    
 
   int Producto::get_porciones ()
   {
     return porciones;
   }
+
+  string Producto:: get_tipo(){
+      return tipo;
+  }
   string Producto::get_sabor ()
   {
     return sabor;
   }
-  string Producto::get_crema ()
-  {
-    return crema;
-  }
-
-  string Producto::get_relleno ()
-  {
-    return relleno;
-  }
-
-  string Producto::get_decoracion ()
-  {
-    return decoracion;
-  }
+  
   string Producto::get_fecha ()
   {
     return fecha;
@@ -107,25 +63,31 @@ public:
 
 
 
+
+
+
+
+
 class Pastel:public Producto
 {
 
 private:
-  float preciofinal;
+  string crema;
+  string relleno;
+  string decoracion;
+  double preciofinal;
 
 public:
 
-    Pastel (float prefin):Producto ( porc, ti, sab, cre, rell, deco)
-  {
-    preciofinal = 0.0;
-  }
+    Pastel ():Producto (0, "Pastel", "", "", 0.0){};
   
-   Pastel (float prefin):Producto (porc, ti, sab, cre, rell, deco, fec, pres)
-  {
-    preciofinal = 0.0;
-  }
+    Pastel (int porciones,string tipo,string sabor,string fecha, double precio, string cre,string rell,string deco, double prefin):Producto (porciones, "Pastel", sabor, fecha, precio), crema(cre), relleno(rell), decoracion(deco),preciofinal(prefin){};
 
-   float cobrar(float preciofinal){return 0.0;}
+    string get_crema();
+    string get_relleno();
+    string get_decoracion();
+    double get_preciofinal();
+    float cobrar(float preciofinal){return 0.0;}
     void imprime_orden();
     void agrega_pedido();
   };
@@ -139,18 +101,35 @@ public:
 	cout << "Decoracion: "<< decoracion << endl;
 } 
 //revisar implementacion, pero quería hacer ejemplo de sobreescritura
+ string Pastel::get_crema ()
+  {
+    return crema;
+  }
+
+  string Pastel::get_relleno ()
+  {
+    return relleno;
+  }
+
+  string Pastel::get_decoracion ()
+  {
+    return decoracion;
+  } 
+  double Pastel::get_preciofinal ()
+  {
+    return preciofinal;
+  }
 
 
-class Galleta:public Empleado{
+
+
+
+class Galleta:public Producto{
     private:
-    int bolsas
-    
 
 public:
-    Galleta (int bol):Producto (string ti, string sab, string fec)
-  {
-     bolsas= 0 ;
-  }
+    Galleta ():Producto (0, "Galleta", "", "", 0.0){};
+    Galleta (int porciones,string tipo,string sabor,string fecha, double precio):Producto (porciones, "Galleta", sabor, fecha, precio){};
 
 
    float cobrar(float preciofinal){return 0.0;}
@@ -158,7 +137,6 @@ public:
     void agrega_pedido();
   };
 void Galleta::imprime_orden(){
-	cout << "Bolsas: "<< bolsas << endl;
 	cout << "Tipo: "<< tipo << endl;
 	cout << "Sabor: "<< sabor << endl;
 	cout << "Fecha: "<< fecha << endl;
@@ -168,34 +146,46 @@ class Tarta:public Producto
 {
 
 private:
-  float preciofinal;
+  string decoracion;
+  double preciofinal;
 
 public:
 
-    Tarta(float prefin):Producto ( porc, ti, sab, cre, rell, deco)
-  {
-    preciofinal = 0.0;
-  }
+    Tarta ():Producto (0, "Tarta", "", "", 0.0){};
   
-   Tarta (float prefin):Producto (porc, ti, sab, cre, rell, deco, fec, pres)
-  {
-    preciofinal = 0.0;
-  }
+    Tarta (int porciones,string tipo,string sabor,string fecha, double precio,string deco, double prefin):Producto (porciones, "Tarta", sabor, fecha, precio), decoracion(deco),preciofinal(prefin){};
 
-   float cobrar(float preciofinal){return 0.0;}
+
+    string get_decoracion();
+    double get_preciofinal();
+    float cobrar(float preciofinal){return 0.0;}
     void imprime_orden();
     void agrega_pedido();
   };
 
-  void Pastel::imprime_orden(){
+  void Tarta::imprime_orden(){
 	cout << "Porciones: "<< porciones << endl;
 	cout << "Tipo: "<< tipo << endl;
 	cout << "Sabor: "<< sabor << endl;
-	cout << "Crema: "<< crema << endl;
-	cout << "Relleno: "<< relleno << endl;
 	cout << "Decoracion: "<< decoracion << endl;
-}
-// Faltaria poner tarta, pero es casi igual a pastel y quisiera corregir los errores de esto primero :)))
+    cout << "Precio Final: "<< preciofinal << endl;
+} 
+//revisar implementacion, pero quería hacer ejemplo de sobreescritura
+ 
+
+  string Tarta::get_decoracion ()
+  {
+    return decoracion;
+  } 
+  double Tarta::get_preciofinal ()
+  {
+    return preciofinal;
+  }
+
+
+
+
+
 
 
 
