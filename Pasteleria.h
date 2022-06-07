@@ -27,9 +27,9 @@ class Pasteleria{
 
 };
 
-void Pasteleria::prueba_pedidos(){
+void Pasteleria::prueba_pedidos(){ //POLIMORFISMO
     //uso de new+array+apuntador para que sea polimorfismo
-
+//APUNTADORES
     prod[num_pedido]=new Pastel(12,"Pastel", "Naranja", "22/02/23", 765.0, "Buttercream de chocolate", "Orange curd", "Chocolate" );
     num_pedido++;
     prod[num_pedido]=new Pastel(8,"Pastel", "Red Velvet", "02/07/22", 525.0, "Crema de queso", "Berry Mix", "Osos de chocolate" );
