@@ -1,7 +1,10 @@
+#include <stdio.h>
+
 #include <iostream>
 #include "Pasteleria.h"
 #include "Producto.h"
-using namespace std;
+
+
  int main( ){
      int dept=0;
      Producto * arg1= new Pastel;
@@ -14,9 +17,9 @@ using namespace std;
      pasteleria.dinero_entrante_peds_portipo();
      pasteleria.prueba_pedidos();
 
-     cout<<"ahora si hay cpp, prueba de funcionamiento:   \n\n";
+     std::cout<<"ahora si hay cpp, prueba de funcionamiento:   \n\n";
      pasteleria.show_pedidos("Pastel");
      dept=pasteleria.dinero_entrante_peds_portipo();
-     cout<<"Dinero que ha entrado hoy"<<dept<<endl;
+     std::cout<<"Dinero que ha entrado hoy"<<dept<<std::endl;
 
  }
