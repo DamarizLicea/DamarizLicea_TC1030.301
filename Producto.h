@@ -23,11 +23,11 @@ protected:
 
 
 public:
-    Producto (): porciones(0), tipo (""), sabor(""),fecha(""), precio(0.0){} ;
+    Producto (): porciones(0), tipo (""), sabor(""),fecha(""), precio(0.0){} ; //CONSTRUCTOR DEFAULT
     
     Producto (int porc, string ti, string sab, string fec, double pres): porciones(porc),tipo(ti), sabor(sab),fecha(fec), precio(pres) {};
-    virtual void imprime_orden();
-    void agrega_pedido();
+    
+    virtual string imprime_orden();
     virtual double calcularprecio();
 	
     int get_porciones();
@@ -88,12 +88,8 @@ public:
     string get_decoracion();
   
 
-    void imprime_orden() {
-        cout << "Tipo: "<< tipo << endl;
-	    cout << "Sabor: "<< sabor << endl;
-	    cout << "Fecha: "<< fecha << endl;
-        
-    }
+    string imprime_orden();
+    
     double calcularprecio(){
     precio=(porciones*60)+45;
     return precio;
@@ -115,7 +111,12 @@ public:
   {
     return decoracion;
   } 
-
+  
+string Pastel::imprime_orden(){//SOBRESCRITO
+	stringstream aux;
+        aux<<"a ver si ya sirve"<<porciones<<"jesus";
+        return aux.str();
+}
 
 
 
@@ -129,16 +130,20 @@ public:
     Galleta (int porciones,string tipo,string sabor,string fecha, double precio):Producto (porciones, "Galleta", sabor, fecha, precio){};
     
     void agrega_pedido();
-    void imprime_orden(){
-	cout << "Tipo: "<< tipo << endl;
-	cout << "Sabor: "<< sabor << endl;
-	cout << "Fecha: "<< fecha << endl;
-}
+    
+    string imprime_orden();
+    
   double calcularprecio(){
     precio=(porciones*8)+7;
     return precio;
 }
   };
+
+string Galleta::imprime_orden(){
+	stringstream aux;
+        aux<<"a ver si ya sirve"<<porciones<<"jesus";
+        return aux.str();
+}
 
 
 class Tarta:public Producto
@@ -160,16 +165,15 @@ public:
     }
     string get_decoracion();
     
-    void imprime_orden();
+    string imprime_orden();
   };
 
-  void Tarta::imprime_orden(){
-	cout << "Porciones: "<< porciones << endl;
-	cout << "Tipo: "<< tipo << endl;
-	cout << "Sabor: "<< sabor << endl;
-	cout << "Decoracion: "<< decoracion << endl;
-    cout << "Costo del producto: "<< precio << endl;
-} 
+ string Tarta::imprime_orden(){
+	stringstream aux;
+        aux<<"a ver si ya sirve"<<porciones<<"jesus";
+        return aux.str();
+}
+
 //revisar implementacion, pero quería hacer ejemplo de sobreescritura
  
 
