@@ -2,11 +2,9 @@
 #define PASTELERIA_H_
 
 #include <string>
-#include <iostream>
 #include <sstream>
 #include "Producto.h" 
 
-using namespace std;
 
 const int ARR=100;
 
@@ -48,18 +46,17 @@ void Pasteleria::prueba_pedidos(){
 }
 
 void Pasteleria::show_pedidos(){
-
-    for (int i = 0; i < num_pedido; i++)
-    cout << prod[i] -> imprime_orden();
+/*   for (int i = 0; i < num_pedido; i++)
+        std::cout << prod[i]-> imprime_orden();*/
 }
 
 void Pasteleria::show_pedidos(string tipo){
-
+/*
     for (int i=0; i< num_pedido; i++){
         if (prod[i]->get_tipo()==tipo)
-        cout<< prod[i]-> imprime_orden();
-    }
-}
+            std::cout << prod[i]-> imprime_orden();
+    }*/
+} 
 
 double Pasteleria::dinero_entrante_peds_portipo(){
   double t = 0;
