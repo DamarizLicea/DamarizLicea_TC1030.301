@@ -14,7 +14,7 @@ class Producto
 
   //variables
 
-protected:
+protected: //MODIFICADORES DE ACCESO
   int porciones;
   string tipo;
   string sabor;
@@ -24,11 +24,13 @@ protected:
 
 public:
     Producto (): porciones(0), tipo (""), sabor(""),fecha(""), precio(0.0){} ; //CONSTRUCTOR DEFAULT
-    
+    //SOBRECARGA
     Producto (int porc, string ti, string sab, string fec, double pres): porciones(porc),tipo(ti), sabor(sab),fecha(fec), precio(pres) {};
     
-    virtual string imprime_orden();
-    virtual double calcularprecio();
+
+    
+    virtual string imprime_orden()=0;  //ABSTRACCION
+    virtual double calcularprecio()=0;
 	
     int get_porciones();
     string get_tipo();
@@ -66,7 +68,7 @@ public:
 
 
 
-
+//HERENCIA
 
 class Pastel:public Producto
 {
@@ -114,8 +116,8 @@ public:
   
 string Pastel::imprime_orden(){//SOBRESCRITO
 	stringstream aux;
-        aux<<"a ver si ya sirve"<<porciones<<"jesus";
-        return aux.str();
+        aux<<"Porciones: "<<porciones<<"  Tipo: "<<tipo<<"  Sabor: "<<sabor<<"  Fecha: "<< fecha<<"  Precio: "<<precio<<"  Crema: "<<crema<<"  Relleno: "<<relleno<<"  Decoración: "<<decoracion<< endl;
+       return aux.str();
 }
 
 
@@ -139,9 +141,9 @@ public:
 }
   };
 
-string Galleta::imprime_orden(){
+string Galleta::imprime_orden(){  //SOBRESCRITURA
 	stringstream aux;
-        aux<<"a ver si ya sirve"<<porciones<<"jesus";
+        aux<<"  Porciones: "<<porciones<<"  Tipo:  "<< tipo<< "  Sabor: "<< sabor<< "  Fecha: "<<fecha<<"  Precio: "<<precio<<endl;
         return aux.str();
 }
 
@@ -170,7 +172,7 @@ public:
 
  string Tarta::imprime_orden(){
 	stringstream aux;
-        aux<<"a ver si ya sirve"<<porciones<<"jesus";
+        aux<<"Porciones: "<<porciones<<"  Tipo: "<<tipo<<"  Sabor: "<<sabor<<"  Fecha: "<< fecha<<"  Precio: "<<precio<<"  Decoración: "<<decoracion<< endl;
         return aux.str();
 }
 
