@@ -9,9 +9,9 @@
  int main( ){
      int dept=0;
 
+     
+
      Pasteleria pasteleria;
-     pasteleria.show_pedidos();
-     pasteleria.dinero_entrante_peds_portipo();
      pasteleria.prueba_pedidos();
 
      std::cout<<"ahora si hay cpp, prueba de funcionamiento:   \n\n";
