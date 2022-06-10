@@ -8,7 +8,7 @@
 
 using namespace std;
 
-//clase Producto
+//clase Producto, es la clase padre
 class Producto
 {
 
@@ -69,7 +69,7 @@ public:
 
 
 //HERENCIA
-
+//Clase hija 1
 class Pastel:public Producto
 {
 
@@ -93,9 +93,9 @@ public:
     string imprime_orden();
     
     double calcularprecio(){
-    precio=(porciones*60)+45;
-    return precio;
-}
+      precio=(porciones*60)+45;
+      return precio;
+    }
   };
 
 //revisar implementacion, pero quería hacer ejemplo de sobreescritura
@@ -122,7 +122,7 @@ string Pastel::imprime_orden(){//SOBRESCRITO
 
 
 
-
+//Clase hija 2
 
 class Galleta:public Producto{
     private:
@@ -147,7 +147,7 @@ string Galleta::imprime_orden(){  //SOBRESCRITURA
         return aux.str();
 }
 
-
+//Clase hija 3
 class Tarta:public Producto
 {
 
