@@ -9,12 +9,12 @@ using namespace std;
 
 const int ARR=100;
 
-class Pasteleria{
+class Pasteleria{       //Creamos clase pasteleria (agrupa una coleccion de productos)
     
 
     private:
 
-     Producto * prod[ARR];
+     Producto * prod[ARR];      //Uso de apuntadores, creación de arreglo.
     int num_pedido;
 
     public:
@@ -45,7 +45,8 @@ void Pasteleria::prueba_pedidos(){ //POLIMORFISMO
 
 
 }
-
+//Dos metodos para mostrar pedidos, uno que funciona general y el otro que funciona de acuerdo a que cocincida con el tipo de peoducto.
+//Lo mismo pasa con los metodos de calcular dinero entrante, uno es general y el otro es por tipo.
 void Pasteleria::show_pedidos(){
    for (int i = 0; i < num_pedido; i++)
         cout << prod[i]-> imprime_orden();
