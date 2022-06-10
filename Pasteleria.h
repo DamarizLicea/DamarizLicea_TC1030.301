@@ -19,9 +19,7 @@ class Pasteleria{       //Creamos clase pasteleria (agrupa una coleccion de prod
 
     public:
     Pasteleria() :num_pedido(0){};
-    void show_pedidos();
     void show_pedidos(string tipo);
-    double dinero_entrante_peds_portipo();
     double dinero_entrante_peds_portipo(string tipo);
     void prueba_pedidos();
 
