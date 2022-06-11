@@ -1,4 +1,16 @@
 
+/*
+Proyecto Pastel main
+Damariz Licea C A01369045
+10/06/2022
+Los demás detalles se pueden ver en el README
+Referencias:
+Me inspiré del código del proyecto Demo en su mayoría, 
+otra parte fue de lo que yo creía se podía hacer, 
+y otra parte fueron recomendaciones de mis amigos.
+*/
+
+
 #include <stdio.h>
 
 #include <iostream>
