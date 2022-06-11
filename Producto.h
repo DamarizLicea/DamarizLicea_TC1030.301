@@ -8,7 +8,8 @@
 
 using namespace std;
 
-//clase Producto, es la clase padre
+//Clase Producto, es la clase padre
+
 class Producto
 {
 
@@ -23,14 +24,15 @@ protected: //MODIFICADORES DE ACCESO
 
 
 public:
-    Producto (): porciones(0), tipo (""), sabor(""),fecha(""), precio(0.0){} ; //CONSTRUCTOR DEFAULT
+    Producto (): porciones(0), tipo (" "), sabor(" "),fecha(" "), precio(0.0){} ; //CONSTRUCTOR DEFAULT
     //SOBRECARGA
     Producto (int porc, string ti, string sab, string fec, double pres): porciones(porc),tipo(ti), sabor(sab),fecha(fec), precio(pres) {};
     
 
     
-    virtual string imprime_orden()=0;  //ABSTRACCION
-    virtual double calcularprecio()=0;
+    virtual string imprime_orden() = 0;  //Abstracción, por ende, la clase Producto es abstracta.
+    virtual double calcularprecio() = 0;
+  
 	
     int get_porciones();
     string get_tipo();
@@ -68,7 +70,7 @@ public:
 
 
 
-//HERENCIA
+//Herencia
 //Clase hija 1
 class Pastel:public Producto
 {
@@ -83,22 +85,22 @@ public:
 
     Pastel ():Producto (0, "Pastel", "", "",0){};
   
-    Pastel (int porciones,string tipo,string sabor,string fecha, double precio, string cre,string rell,string deco):Producto (porciones, "Pastel", sabor, fecha, precio), crema(cre), relleno(rell), decoracion(deco){};
+    Pastel (int porciones, string tipo, string sabor, string fecha, double precio, string cre, string rell, string deco):Producto (porciones, "Pastel", sabor, fecha, precio), crema(cre), relleno(rell), decoracion(deco){};
 
     string get_crema();
     string get_relleno();
     string get_decoracion();
   
-
+   
     string imprime_orden();
     
-    double calcularprecio(){
-      precio=(porciones*60)+45;
+    double calcularprecio(){  //Sobreescritura de métodos
+      precio = (porciones * 60) + 45;
       return precio;
     }
   };
 
-//revisar implementacion, pero quería hacer ejemplo de sobreescritura
+
  string Pastel::get_crema ()
   {
     return crema;
@@ -114,75 +116,62 @@ public:
     return decoracion;
   } 
   
-string Pastel::imprime_orden(){//SOBRESCRITO
+string Pastel::imprime_orden(){ //Sobreescritura, sirve para mostrar los datos del pedido del producto.
 	stringstream aux;
-        aux<<"Porciones: "<<porciones<<"  Tipo: "<<tipo<<"  Sabor: "<<sabor<<"  Fecha: "<< fecha<<"  Precio: "<<precio<<"  Crema: "<<crema<<"  Relleno: "<<relleno<<"  Decoración: "<<decoracion<< endl;
-       return aux.str();
+  aux << "Porciones: " << porciones << "  Tipo: " << tipo << "  Sabor: " << sabor << "  Fecha: " << fecha << "  Precio: " << precio << "  Crema: " << crema << "  Relleno: " << relleno << "  Decoración: " << decoracion << endl;
+  return aux.str();
 }
-
 
 
 //Clase hija 2
 
 class Galleta:public Producto{
-    private:
 
 public:
     Galleta ():Producto (0, "Galleta", "", "", 0.0){};
-    Galleta (int porciones,string tipo,string sabor,string fecha, double precio):Producto (porciones, "Galleta", sabor, fecha, precio){};
+    Galleta (int porciones, string tipo, string sabor, string fecha, double precio):Producto (porciones, "Galleta", sabor, fecha, precio){};
     
-    void agrega_pedido();
     
     string imprime_orden();
     
   double calcularprecio(){
-    precio=(porciones*8)+7;
+    precio = (porciones * 8) + 7;
     return precio;
-}
-  };
+  }
+};
 
-string Galleta::imprime_orden(){  //SOBRESCRITURA
+string Galleta::imprime_orden(){  //Sobreescritura, sirve para mostrar los datos del pedido del producto.
 	stringstream aux;
-        aux<<"  Porciones: "<<porciones<<"  Tipo:  "<< tipo<< "  Sabor: "<< sabor<< "  Fecha: "<<fecha<<"  Precio: "<<precio<<endl;
-        return aux.str();
+  aux<<"  Porciones: " << porciones << "  Tipo:  " << tipo << "  Sabor: " << sabor << "  Fecha: " << fecha << "  Precio: " << precio << endl;
+  return aux.str();
 }
 
 //Clase hija 3
-class Tarta:public Producto
-{
-
+class Tarta:public Producto{
 private:
   string decoracion;
-  
-
 public:
+  Tarta ():Producto (0, "Tarta", "", "", 0){};
+  Tarta (int porciones, string tipo, string sabor, string fecha, double precio, string deco):Producto (porciones, "Tarta", sabor, fecha, precio), decoracion(deco){};
 
-    Tarta ():Producto (0, "Tarta", "", "", 0){};
-  
-    Tarta (int porciones,string tipo,string sabor,string fecha, double precio,string deco):Producto (porciones, "Tarta", sabor, fecha, precio), decoracion(deco){};
-
-    double calcularprecio(){
-    precio=(porciones*30)+35;
+  double calcularprecio(){
+    precio = (porciones * 30) + 35;
     return precio;
-    }
-    string get_decoracion();
+  }
+  string get_decoracion();
     
-    string imprime_orden();
-  };
+  string imprime_orden();
+};
 
- string Tarta::imprime_orden(){
+string Tarta::imprime_orden(){  //Sirve para mostrar los datos del pedido del producto.
 	stringstream aux;
-        aux<<"Porciones: "<<porciones<<"  Tipo: "<<tipo<<"  Sabor: "<<sabor<<"  Fecha: "<< fecha<<"  Precio: "<<precio<<"  Decoración: "<<decoracion<< endl;
-        return aux.str();
+  aux<<"Porciones: "<<porciones<<"  Tipo: "<<tipo<<"  Sabor: "<<sabor<<"  Fecha: "<< fecha<<"  Precio: "<<precio<<"  Decoración: "<<decoracion<< endl;
+  return aux.str();
 }
-
-//revisar implementacion, pero quería hacer ejemplo de sobreescritura
- 
-
-  string Tarta::get_decoracion ()
-  {
-    return decoracion;
-  } 
+string Tarta::get_decoracion ()
+{
+  return decoracion;
+} 
  
 
 
