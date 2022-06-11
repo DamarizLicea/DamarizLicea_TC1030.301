@@ -24,8 +24,6 @@ using namespace std;
     pasteleria.prueba_pedidos();   /* Llamamos a la función que crea mis objetos de prueba y ejemplos para poder verificar buen funcionamiento, y 
                                         ejemplificar situaciones reales.*/
 
-
-
     while(tdpmain < 8){
 
     cout << "\n¿Qué quieres hacer?  Ingrese el numero: \n(1)Registrar pedido de Pastel  \n(2)Registrar pedido de Galleta \n(3)Registrar pedido de Tarta \n(4)Mostrar pedidos de Pastel  \n(5)Mostrar pedidos de Galleta \n(6)Mostrar pedidos de Tarta \n(7)Mostrar dinero entrado por pedidos \n(8)Salir \n"<<endl;
