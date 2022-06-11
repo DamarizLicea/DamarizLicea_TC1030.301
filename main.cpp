@@ -4,22 +4,124 @@
 #include <iostream>
 #include "Pasteleria.h"
 #include "Producto.h"
+using namespace std;
+
+ int main( ){   /*Definimos variables a usar en los metodos de registrar pedidos, además de una 
+                    que nos sirve para que el usuario pueda decidir que opcion elegir del menú que tenemos abajo (tdpmain).
+                    Tenemos también la función dept que usamos al imprimir los valores del dinero ingresado por tipo de producto*/
+    int dept = 0;
+    int tdpmain = 0;
+    int porciones = 0;
+    string tipo = " ";
+    string sabor = " ";
+    string fecha = " ";
+    double precio = 0.0;
+    string crema = " ";
+    string relleno = " ";
+    string deco = " ";
+
+    Pasteleria pasteleria;
+    pasteleria.prueba_pedidos();   /* Llamamos a la función que crea mis objetos de prueba y ejemplos para poder verificar buen funcionamiento, y 
+                                        ejemplificar situaciones reales.*/
 
 
- int main( ){
-     int dept=0;
 
-     
+    while(tdpmain < 8){
 
-     Pasteleria pasteleria;
-     pasteleria.prueba_pedidos();
+    cout << "\n¿Qué quieres hacer?  Ingrese el numero: \n(1)Registrar pedido de Pastel  \n(2)Registrar pedido de Galleta \n(3)Registrar pedido de Tarta \n(4)Mostrar pedidos de Pastel  \n(5)Mostrar pedidos de Galleta \n(6)Mostrar pedidos de Tarta \n(7)Mostrar dinero entrado por pedidos \n(8)Salir \n"<<endl;
+    cout << "Ingrese opcion: \n ";
+    cin >> tdpmain;
+    if (tdpmain == 1){  //Añadimos objetos Pastel, con características dadas por el usuario a nuestro arreglo de productos.
+        cout << "Registra pedido del pastel: \n";
+        cout << "Porciones:  ";
+        cin >> porciones;
+        cout << "Tipo (Ingresa pastel)  :";
+        cin >> tipo;
+        cout << "Sabor:  ";
+        cin >> sabor;
+        cout << "Fecha:  ";
+        cin >> fecha;
+        cout << "Precio:  ";
+        cin >> precio;
+        cout << "Crema:  ";
+        cin >> crema;
+        cout << "Relleno:  ";
+        cin >> relleno;
+        cout << "Decoracion: ";
+        cin >> deco;
 
-     std::cout<<"ahora si hay cpp, prueba de funcionamiento:   \n\n";
-     pasteleria.show_pedidos("Tarta");
-     pasteleria.show_pedidos("Galleta");
-     pasteleria.show_pedidos("Pastel");
+        pasteleria.crea_pastel(porciones, tipo, sabor, fecha, precio, crema, relleno, deco);
+        cout<<"\nLos productos actuales de Pastel: \n";
+        pasteleria.show_pedidos("Pastel");
 
-     dept=pasteleria.dinero_entrante_peds_portipo();
-     std::cout<<"Dinero que ha entrado hoy:  "<<dept<<std::endl;
 
+    }else if (tdpmain == 2){
+
+        cout << "Registra pedido de galletas: \n"; //Añadimos objetos Galleta, con características dadas por el usuario a nuestro arreglo de productos.
+        cout << "Porciones:  ";
+        cin >> porciones;
+        cout << "Tipo (Ingresa Galleta)  :";
+        cin >> tipo;
+        cout << "Sabor:  ";
+        cin >> sabor;
+        cout << "Fecha:  ";
+        cin >> fecha;
+        cout <<"Precio:  ";
+        cin >> precio;
+
+        pasteleria.crea_galleta(porciones, tipo, sabor, fecha, precio);
+        cout<<"\nLos productos actuales de Galleta: \n";
+        pasteleria.show_pedidos("Galleta");
+
+    }else if(tdpmain == 3){
+        
+        cout << "Registra pedido de Tarta: \n";   //Añadimos objetos Tarta, con características dadas por el usuario a nuestro arreglo de productos.
+        cout << "Porciones:  ";
+        cin >> porciones;
+        cout << "Tipo (Ingresa Tarta)  :";
+        cin >> tipo;
+        cout << "Sabor:  ";
+        cin >> sabor;
+        cout << "Fecha:  ";
+        cin >> fecha;
+        cout << "Precio:  ";
+        cin >> precio;
+        cout << "Decoracion: ";
+        cin >> deco;
+
+        pasteleria.crea_tarta(porciones, tipo, sabor,  fecha,  precio, deco);
+        cout<<"Los productos actuales de Tarta: \n";
+        pasteleria.show_pedidos("Tarta");
+
+    }else if(tdpmain == 4){ //Mostramos todos los objetos que coincidan con el tipo Pastel del arreglo de productos
+        cout << "Mostrar pedidos de Pasteles: \n";
+        pasteleria.show_pedidos("Pastel");
+
+    }else if(tdpmain == 5){ //Mostramos todos los objetos que coincidan con el tipo Galleta del arreglo de productos
+        cout << "Mostrar pedidos de Galletas: \n";
+        pasteleria.show_pedidos("Galleta");
+
+    }else if(tdpmain == 6){ //Mostramos todos los objetos que coincidan con el tipo Tarta del arreglo de productos
+        cout << "Mostrar pedidos de Tartas: \n";
+        pasteleria.show_pedidos("Tarta");
+
+    }else if(tdpmain == 7){       //Mostramos el dinero por tipos de producto que ha entrado desde que se inició el sistema.
+        cout << "El dinero que ha entrado hoy por pedidos de Pasteles:  \n";
+        dept = pasteleria.dinero_entrante_peds_portipo("Pastel");
+        cout << dept;
+        cout << "\nEl dinero que ha entrado hoy por pedidos de Galletas:  \n";
+        dept = pasteleria.dinero_entrante_peds_portipo("Galleta");
+        cout << dept;
+        cout << "\nEl dinero que ha entrado hoy por pedidos de Tartas:  \n";
+        dept = pasteleria.dinero_entrante_peds_portipo("Tarta");
+        cout << dept << "\n";
+
+    }else{
+        cout << "Sayōnara";     //Se acaba el programa
+        return 0;
+    }
+    }
+
+    
  }
+
