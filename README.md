@@ -1,5 +1,5 @@
 # DamarizLicea_TC1030.301
-***TC1030 PROYECTO PASTEL.***
+### ***TC1030 PROYECTO PASTEL.***
 
 
 * Dado que mi sueño a futuro es abrir una pastelería, y siempre estoy pensando en cómo voy a manejarla cuando la tenga, decidí retomar la idea de mi proyecto del primer semestre y reescribirla en el lenguaje de C++. Esperando crear un proyecto mucho mas funcional que la última vez. Tenemos a la pastelería que debe saber cúantos pedidos y como son. Los tipos de productos se manejan según las clases derivadas creadas que son: Pastel, Galletas, Tarta.
@@ -10,7 +10,12 @@
 
 * En el main podemos encontrar un menú organizado para poder ver lo que hace realmente el programa. No hay excepciones para correrlo, más que tener el IDE bien instalado, en caso de algún problema, también se puede correr en Online GDB.
 
-***FUNCIONALIDAD***
+
+
+🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 
+
+
+### ***FUNCIONALIDAD***
 
 
 * Al iniciar el programa nos encontramos con un menú de opciones que nos pide ingresemos una opción entre las del menú, si se ingresa una letra o un numero mayor o igual a 8, o menor que 1, el programa se despide y termina su repetición. Por eso se especifica que opciones usar para acceder a cada función.
@@ -23,7 +28,11 @@
      * Con las demás opciones del programa no se debe tener problema alguno, ya que no pide ingresemos nada, solo despliega/ imprime datos que ya procesó y en los que el         usuario no interfiere.
  
  
-***CORRECCIONES***
+🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰
+ 
+
+
+### ***CORRECCIONES***
 
 
 * *Herencia*: Producto.h en línea 87
@@ -45,3 +54,7 @@
 
 
 * *UML*: Ya se encuentra corregido, ir hacia la parte superior de esta página para encontrar su apartado.
+
+
+
+🍰🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 🥧🍪 🍰 
