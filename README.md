@@ -10,7 +10,7 @@
 
 * En el main podemos encontrar un menú organizado para poder ver lo que hace realmente el programa. No hay excepciones para correrlo, más que tener el IDE bien instalado, en caso de algún problema, también se puede correr en Online GDB.
 
-***Funcionalidad***
+***FUNCIONALIDAD***
 
 
 * Al iniciar el programa nos encontramos con un menú de opciones que nos pide ingresemos una opción entre las del menú, si se ingresa una letra o un numero mayor o igual a 8, o menor que 1, el programa se despide y termina su repetición. Por eso se especifica que opciones usar para acceder a cada función.
@@ -23,16 +23,16 @@
      * Con las demás opciones del programa no se debe tener problema alguno, ya que no pide ingresemos nada, solo despliega/ imprime datos que ya procesó y en los que el         usuario no interfiere.
  
  
-***Correcciones***
+***CORRECCIONES***
 
 
-*Herencia: Producto.h en línea 86
+*Herencia: Producto.h en línea 87
 
 
-*Sobreescritura: Producto.h en líneas 108-111
+*Sobreescritura: Producto.h en líneas 109-112
+*hola
 
-
-*Sobrecarga: Producto.h en línea 40
+*Sobrecarga: Producto.h en línea 41
 
 
 *Modificadores de acceso: Producto.h en líneas 29-34, 58-78, 86. 
