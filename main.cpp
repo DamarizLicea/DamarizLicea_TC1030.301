@@ -53,7 +53,7 @@ using namespace std;
                         //por el usuario a nuestro arreglo de productos.
      
         cout << "Registra pedido del pastel: \n";
-        cout << "Porciones:  ";
+        cout << "Porciones:  (Ingrese numero entero por favor)  ";
         cin >> porciones;
         cout << "Tipo (Ingresa pastel)  :";
         cin >> tipo;
@@ -79,7 +79,7 @@ using namespace std;
 
         cout << "Registra pedido de galletas: \n"; //Añadimos objetos Galleta, con características 
                                                    //dadas por el usuario a nuestro arreglo de productos.
-        cout << "Porciones:  ";
+        cout << "Porciones: (Ingrese numero entero por favor)  ";
         cin >> porciones;
         cout << "Tipo (Ingresa Galleta)  :";
         cin >> tipo;
@@ -98,7 +98,7 @@ using namespace std;
         
         cout << "Registra pedido de Tarta: \n";   //Añadimos objetos Tarta, con características 
                                                   //dadas por el usuario a nuestro arreglo de productos.
-        cout << "Porciones:  ";
+        cout << "Porciones:  (Ingrese numero entero por favor) ";
         cin >> porciones;
         cout << "Tipo (Ingresa Tarta)  :";
         cin >> tipo;
