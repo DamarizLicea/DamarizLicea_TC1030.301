@@ -8,6 +8,7 @@ Referencias:
 Me inspiré del código del proyecto Demo en su mayoría, 
 otra parte fue de lo que yo creía se podía hacer, 
 y otra parte fueron recomendaciones de mis amigos.
+Version: 10
 */
 
 #ifndef PASTELERIA_H_
@@ -36,7 +37,8 @@ class Pasteleria{       //Creamos clase pasteleria (agrupa una coleccion de prod
         double dinero_entrante_peds_portipo();
         double dinero_entrante_peds_portipo(string tipo);
         void prueba_pedidos();
-        void crea_pastel(int porciones, string tipo, string sabor, string fecha, double precio, string crema, string relleno, string deco);
+        void crea_pastel(int porciones, string tipo, string sabor, 
+                         string fecha, double precio, string crema, string relleno, string deco);
         void crea_galleta(int porciones, string tipo, string sabor, string fecha, double precio);
         void crea_tarta(int porciones, string tipo, string sabor, string fecha, double precio,string deco);  //El uso de las funciones se ve más en el main.
 
@@ -45,9 +47,11 @@ class Pasteleria{       //Creamos clase pasteleria (agrupa una coleccion de prod
 void Pasteleria::prueba_pedidos(){ //POLIMORFISMO
     //uso de new + array + apuntador para que sea polimorfismo
     //APUNTADOR = prod
-    prod[num_pedido] = new Pastel(12,"Pastel", "Naranja", "22/02/23", 765.0, "Buttercream de chocolate", "Orange curd", "Chocolate" );
+    prod[num_pedido] = new Pastel(12,"Pastel", "Naranja", "22/02/23", 765.0, 
+                                  "Buttercream de chocolate", "Orange curd", "Chocolate" );
     num_pedido++;
-    prod[num_pedido] = new Pastel(8,"Pastel", "Red Velvet", "02/07/22", 525.0, "Crema de queso", "Berry Mix", "Osos de chocolate" );
+    prod[num_pedido] = new Pastel(8,"Pastel", "Red Velvet", "02/07/22", 525.0, 
+                                  "Crema de queso", "Berry Mix", "Osos de chocolate" );
     num_pedido++;
     prod[num_pedido] = new Galleta (12,"Galleta", "Cheesecake Oreo", "07/06/22", 103.0 );
     num_pedido++;
@@ -59,9 +63,14 @@ void Pasteleria::prueba_pedidos(){ //POLIMORFISMO
     num_pedido++;
 }
 
-//Dos métodos para mostrar pedidos, uno que funciona general y el otro que funciona de acuerdo a que cocincida con el tipo de producto.
-//Lo mismo pasa con los métodos de calcular dinero entrante, uno es general y el otro es por tipo.
-//Aun cuando los que no reciben la variable "tipo" como parametro no se usan, decidí dejarlos como método de autoestudio.
+//Dos métodos para mostrar pedidos, uno que funciona general y 
+//el otro que funciona de acuerdo a que cocincida con el tipo de producto.
+//Lo mismo pasa con los métodos de calcular dinero entrante, 
+//uno es general y el otro es por tipo.
+//Aun cuando los que no reciben la variable "tipo" como parametro no se usan, 
+//decidí dejarlos como método de autoestudio.
+
+
 void Pasteleria::show_pedidos(){
    for (int i = 0; i < num_pedido; i++)
         cout << prod[i]-> imprime_orden();  
@@ -93,7 +102,8 @@ double Pasteleria::dinero_entrante_peds_portipo(string tipo){
 }
 //Funciones para creae objetos a través de los datos ingresados por el usuario.
 //Para ver su uso, ir al main.
-void Pasteleria::crea_pastel(int porciones, string tipo, string sabor, string fecha, double precio, string crema, string relleno, string deco){
+void Pasteleria::crea_pastel(int porciones, string tipo, string sabor, string fecha, 
+                             double precio, string crema, string relleno, string deco){
     prod[num_pedido] = new Pastel( porciones, tipo, sabor, fecha, precio, crema, relleno, deco);
     num_pedido++;
 }
