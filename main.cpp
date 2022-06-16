@@ -18,9 +18,13 @@ y otra parte fueron recomendaciones de mis amigos.
 #include "Producto.h"
 using namespace std;
 
- int main( ){   /*Definimos variables a usar en los metodos de registrar pedidos, además de una 
-                    que nos sirve para que el usuario pueda decidir que opcion elegir del menú que tenemos abajo (tdpmain).
-                    Tenemos también la función dept que usamos al imprimir los valores del dinero ingresado por tipo de producto*/
+ int main( ){   /*Definimos variables a usar en los metodos de 
+                  registrar pedidos, además de una 
+                  que nos sirve para que el usuario pueda decidir 
+                  que opcion elegir del menú que tenemos abajo (tdpmain).
+                  Tenemos también la función dept que usamos al imprimir 
+                  los valores del dinero ingresado por tipo de producto*/
+  
     int dept = 0;
     int tdpmain = 0;
     int porciones = 0;
@@ -33,15 +37,21 @@ using namespace std;
     string deco = " ";
 
     Pasteleria pasteleria;
-    pasteleria.prueba_pedidos();   /* Llamamos a la función que crea mis objetos de prueba y ejemplos para poder verificar buen funcionamiento, y 
-                                        ejemplificar situaciones reales.*/
+    pasteleria.prueba_pedidos();   /* Llamamos a la función que crea mis objetos de 
+                                      prueba y ejemplos para poder verificar buen funcionamiento, 
+                                      y ejemplificar situaciones reales.*/
 
     while(tdpmain < 8){
 
-    cout << "\n¿Qué quieres hacer?  Ingrese el numero: \n(1)Registrar pedido de Pastel  \n(2)Registrar pedido de Galleta \n(3)Registrar pedido de Tarta \n(4)Mostrar pedidos de Pastel  \n(5)Mostrar pedidos de Galleta \n(6)Mostrar pedidos de Tarta \n(7)Mostrar dinero entrado por pedidos \n(8)Salir \n"<<endl;
+    cout << "\n¿Qué quieres hacer?  Ingrese el numero: \n(1)Registrar pedido de Pastel"<<  
+     "\n(2)Registrar pedido de Galleta \n(3)Registrar pedido de Tarta \n(4)Mostrar pedidos de Pastel" 
+     <<"\n(5)Mostrar pedidos de Galleta \n(6)Mostrar pedidos de Tarta" 
+     <<"\n(7)Mostrar dinero entrado por pedidos \n(8)Salir \n"<<endl;
     cout << "Ingrese opcion: \n ";
     cin >> tdpmain;
-    if (tdpmain == 1){  //Añadimos objetos Pastel, con características dadas por el usuario a nuestro arreglo de productos.
+    if (tdpmain == 1){  //Añadimos objetos Pastel, con características dadas 
+                        //por el usuario a nuestro arreglo de productos.
+     
         cout << "Registra pedido del pastel: \n";
         cout << "Porciones:  ";
         cin >> porciones;
@@ -67,7 +77,8 @@ using namespace std;
 
     }else if (tdpmain == 2){
 
-        cout << "Registra pedido de galletas: \n"; //Añadimos objetos Galleta, con características dadas por el usuario a nuestro arreglo de productos.
+        cout << "Registra pedido de galletas: \n"; //Añadimos objetos Galleta, con características 
+                                                   //dadas por el usuario a nuestro arreglo de productos.
         cout << "Porciones:  ";
         cin >> porciones;
         cout << "Tipo (Ingresa Galleta)  :";
@@ -85,7 +96,8 @@ using namespace std;
 
     }else if(tdpmain == 3){
         
-        cout << "Registra pedido de Tarta: \n";   //Añadimos objetos Tarta, con características dadas por el usuario a nuestro arreglo de productos.
+        cout << "Registra pedido de Tarta: \n";   //Añadimos objetos Tarta, con características 
+                                                  //dadas por el usuario a nuestro arreglo de productos.
         cout << "Porciones:  ";
         cin >> porciones;
         cout << "Tipo (Ingresa Tarta)  :";
