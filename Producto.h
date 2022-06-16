@@ -8,6 +8,7 @@ Referencias:
 Me inspiré del código del proyecto Demo en su mayoría, 
 otra parte fue de lo que yo creía se podía hacer, 
 y otra parte fueron recomendaciones de mis amigos.
+Version: 8
 */
 
 #ifndef PRODUCTO_H_
@@ -38,7 +39,8 @@ protected: //MODIFICADORES DE ACCESO
 public:
     Producto (): porciones(0), tipo (" "), sabor(" "),fecha(" "), precio(0.0){} ; //CONSTRUCTOR DEFAULT
     //SOBRECARGA
-    Producto (int porc, string ti, string sab, string fec, double pres): porciones(porc),tipo(ti), sabor(sab),fecha(fec), precio(pres) {};
+    Producto (int porc, string ti, string sab, string fec, double pres): 
+	porciones(porc),tipo(ti), sabor(sab),fecha(fec), precio(pres) {};
     
 
     
@@ -97,7 +99,8 @@ public:
 
     Pastel ():Producto (0, "Pastel", "", "",0){};
   
-    Pastel (int porciones, string tipo, string sabor, string fecha, double precio, string cre, string rell, string deco):Producto (porciones, "Pastel", sabor, fecha, precio), crema(cre), relleno(rell), decoracion(deco){};
+    Pastel (int porciones, string tipo, string sabor, string fecha, double precio, string cre, string rell, string deco):
+    Producto (porciones, "Pastel", sabor, fecha, precio), crema(cre), relleno(rell), decoracion(deco){};
 
     string get_crema();
     string get_relleno();
@@ -130,7 +133,8 @@ public:
   
 string Pastel::imprime_orden(){ //Sobreescritura, sirve para mostrar los datos del pedido del producto.
 	stringstream aux;
-  aux << "Porciones: " << porciones << "  Tipo: " << tipo << "  Sabor: " << sabor << "  Fecha: " << fecha << "  Precio: " << precio << "  Crema: " << crema << "  Relleno: " << relleno << "  Decoración: " << decoracion << endl;
+  aux << "Porciones: " << porciones << "  Tipo: " << tipo << "  Sabor: " << sabor << "  Fecha: " << fecha << "  Precio: " << 
+	  precio << "  Crema: " << crema << "  Relleno: " << relleno << "  Decoración: " << decoracion << endl;
   return aux.str();
 }
 
@@ -141,7 +145,8 @@ class Galleta:public Producto{
 
 public:
     Galleta ():Producto (0, "Galleta", "", "", 0.0){};
-    Galleta (int porciones, string tipo, string sabor, string fecha, double precio):Producto (porciones, "Galleta", sabor, fecha, precio){};
+    Galleta (int porciones, string tipo, string sabor, string fecha, double precio):
+	Producto (porciones, "Galleta", sabor, fecha, precio){};
     
     
     string imprime_orden();
@@ -164,7 +169,8 @@ private:
   string decoracion;
 public:
   Tarta ():Producto (0, "Tarta", "", "", 0){};
-  Tarta (int porciones, string tipo, string sabor, string fecha, double precio, string deco):Producto (porciones, "Tarta", sabor, fecha, precio), decoracion(deco){};
+  Tarta (int porciones, string tipo, string sabor, string fecha, double precio, string deco):
+	Producto (porciones, "Tarta", sabor, fecha, precio), decoracion(deco){};
 
   double calcularprecio(){
     precio = (porciones * 30) + 35;
@@ -177,7 +183,8 @@ public:
 
 string Tarta::imprime_orden(){  //Sirve para mostrar los datos del pedido del producto.
 	stringstream aux;
-  aux<<"Porciones: "<<porciones<<"  Tipo: "<<tipo<<"  Sabor: "<<sabor<<"  Fecha: "<< fecha<<"  Precio: "<<precio<<"  Decoración: "<<decoracion<< endl;
+  aux<<"Porciones: "<<porciones<<"  Tipo: "<<tipo<<"  Sabor: "<<sabor<<"  Fecha: "<< 
+	  fecha<<"  Precio: "<<precio<<"  Decoración: "<<decoracion<< endl;
   return aux.str();
 }
 string Tarta::get_decoracion ()
