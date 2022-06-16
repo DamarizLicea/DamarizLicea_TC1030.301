@@ -35,22 +35,22 @@
 ### ***CORRECCIONES***
 
 
-* *Herencia*: Producto.h en línea 87
+* *Herencia*: Producto.h en línea 89
 
 
-* *Sobreescritura*: Producto.h en líneas 109-112
+* *Sobreescritura*: Producto.h en líneas 112-115
 
 
-* *Sobrecarga*: Producto.h en línea 41
+* *Sobrecarga*: Producto.h en línea 42
 
 
-* *Modificadores de acceso*: Producto.h en líneas 29, 58-78, 87. (No estoy poniendo todos aquí, solo un ejemplo completo que pueda demostrar).
+* *Modificadores de acceso*: Producto.h en líneas 29, 51-55, 87. (No estoy poniendo todos aquí, solo un ejemplo completo que pueda demostrar).
 
 
-* *Abstracción*: La clase "Producto" es abstracta, en las líneas 45,46 de Producto.h podemos ver las funciones virtual igualadas a 0. (No hay interfaces).
+* *Abstracción*: La clase "Producto" es abstracta, en las líneas 47,48 de Producto.h podemos ver las funciones virtual igualadas a 0. (No hay interfaces).
 
 
-* *Polimorfismo*: Pasteleria.h líneas 29, 45-60,96-109 (Entre todas las líneas, hacen un ejemplo de polimorfismo).
+* *Polimorfismo*: Pasteleria.h líneas 30, 50-67, 77-105 (Entre todas las líneas, hacen un ejemplo de polimorfismo).
 
 
 * *UML*: Ya se encuentra corregido, ir hacia la parte superior de esta página para encontrar su apartado.
