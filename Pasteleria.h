@@ -1,4 +1,3 @@
-
 /*
 Proyecto Pastel Clase Pasteleria
 Damariz Licea C A01369045
@@ -20,7 +19,8 @@ Version: 10
 
 using namespace std;
 
-const int ARR = 500;      //Creamos una variable que contenga el numero de lugares que el arreglo va a tener.
+const int ARR = 500;      //Creamos una variable que contenga el 
+                            //numero de lugares que el arreglo va a tener.
 
 class Pasteleria{       //Creamos clase pasteleria (agrupa una coleccion de productos)
     
@@ -39,8 +39,11 @@ class Pasteleria{       //Creamos clase pasteleria (agrupa una coleccion de prod
         void prueba_pedidos();
         void crea_pastel(int porciones, string tipo, string sabor, 
                          string fecha, double precio, string crema, string relleno, string deco);
-        void crea_galleta(int porciones, string tipo, string sabor, string fecha, double precio);
-        void crea_tarta(int porciones, string tipo, string sabor, string fecha, double precio,string deco);  //El uso de las funciones se ve más en el main.
+        void crea_galleta(int porciones, string tipo, 
+                            string sabor, string fecha, double precio);
+        void crea_tarta(int porciones, string tipo, string sabor,
+                            string fecha, double precio,string deco);  
+                            //El uso de las funciones se ve más en el main.
 
 };
 
