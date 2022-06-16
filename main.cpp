@@ -127,7 +127,7 @@ using namespace std;
         cout << "Mostrar pedidos de Tartas: \n";
         pasteleria.show_pedidos("Tarta");
 
-    }else if(tdpmain == 7){       //Mostramos el dinero por tipos de producto que ha entrado desde que se inició el sistema.
+    }else if(tdpmain == 7){ //Mostramos el dinero por tipos de producto que ha entrado desde que se inició el sistema.
         cout << "El dinero que ha entrado hoy por pedidos de Pasteles:  \n";
         dept = pasteleria.dinero_entrante_peds_portipo("Pastel");
         cout << dept;
