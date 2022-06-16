@@ -133,8 +133,8 @@ public:
   
 string Pastel::imprime_orden(){ //Sobreescritura, sirve para mostrar los datos del pedido del producto.
 	stringstream aux;
-  aux << "Porciones: " << porciones << "  Tipo: " << tipo << "  Sabor: " << sabor << "  Fecha: " << fecha << "  Precio: " << 
-	  precio << "  Crema: " << crema << "  Relleno: " << relleno << "  Decoración: " << decoracion << endl;
+  aux << "Porciones: " << porciones << "  Tipo: " << tipo << "  Sabor: " << sabor << "  Fecha: " << fecha 
+  << "  Precio: " << precio << "  Crema: " << crema << "  Relleno: " << relleno << "  Decoración: " << decoracion << endl;
   return aux.str();
 }
 
@@ -159,7 +159,8 @@ public:
 
 string Galleta::imprime_orden(){  //Sobreescritura, sirve para mostrar los datos del pedido del producto.
 	stringstream aux;
-  aux<<"  Porciones: " << porciones << "  Tipo:  " << tipo << "  Sabor: " << sabor << "  Fecha: " << fecha << "  Precio: " << precio << endl;
+  aux<<"  Porciones: " << porciones << "  Tipo:  " << tipo << "  Sabor: " 
+  << sabor << "  Fecha: " << fecha << "  Precio: " << precio << endl;
   return aux.str();
 }
 
