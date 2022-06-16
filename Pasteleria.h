@@ -7,7 +7,7 @@ Referencias:
 Me inspiré del código del proyecto Demo en su mayoría, 
 otra parte fue de lo que yo creía se podía hacer, 
 y otra parte fueron recomendaciones de mis amigos.
-Version: 10
+Version: 11
 */
 
 #ifndef PASTELERIA_H_
