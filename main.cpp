@@ -72,7 +72,7 @@ using namespace std;
 
         pasteleria.crea_pastel(porciones, tipo, sabor, fecha, precio, crema, relleno, deco);
         cout<<"\nLos productos actuales de Pastel: \n";
-        pasteleria.show_pedidos("Pastel");
+        pasteleria.show_pedidos("Pastel"); //Mostramos todos los objetos que coincidan con este tipo, creados.
 
 
     }else if (tdpmain == 2){
@@ -92,7 +92,7 @@ using namespace std;
 
         pasteleria.crea_galleta(porciones, tipo, sabor, fecha, precio);
         cout<<"\nLos productos actuales de Galleta: \n";
-        pasteleria.show_pedidos("Galleta");
+        pasteleria.show_pedidos("Galleta"); //Mostramos todos los objetos que coincidan con este tipo, creados.
 
     }else if(tdpmain == 3){
         
@@ -113,7 +113,7 @@ using namespace std;
 
         pasteleria.crea_tarta(porciones, tipo, sabor,  fecha,  precio, deco);
         cout<<"Los productos actuales de Tarta: \n";
-        pasteleria.show_pedidos("Tarta");
+        pasteleria.show_pedidos("Tarta"); //Mostramos todos los objetos que coincidan con este tipo, creados.
 
     }else if(tdpmain == 4){ //Mostramos todos los objetos que coincidan con el tipo Pastel del arreglo de productos
         cout << "Mostrar pedidos de Pasteles: \n";
@@ -139,7 +139,8 @@ using namespace std;
         cout << dept << "\n";
 
     }else{
-        cout << "Sayōnara";     //Se acaba el programa
+        cout << "Sayōnara";     //Se acaba el programa, si ingresa letras, números con decimales, 
+                                //el numero 8 o números diferentes a los del menú.
         return 0;
     }
     }
